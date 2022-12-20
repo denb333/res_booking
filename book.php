@@ -109,7 +109,7 @@ if (isset($_POST['confirm'])) {
 											<?php
 
 
-											print_r($_POST['qty']);
+											// print_r($_POST['qty']);
 											$total_price = 0;
 											$j = -1;
 											for ($i = 0; $i < count($_POST["qty"]); $i++) {
@@ -117,9 +117,9 @@ if (isset($_POST['confirm'])) {
 
 												$qty = $_POST["qty"][$i];
 
-												echo $i;
+												
 												if ($qty == null) continue;
-												echo $i;
+												
 												$j++;
 												$i_id = $_POST['item'][$j];
 												//echo $qty;
@@ -130,16 +130,16 @@ if (isset($_POST['confirm'])) {
 												// $total_price = 0;
 												foreach ($Itmresult as $itmr) {
 													//echo $itmr['price'];
-													echo $qty . 'àdf';
+													// echo $qty . 'àdf';
 													$total_price = $total_price + ($qty * $itmr['price']);
 											?>
 													<tr>
 														<td><img style="height: 40px;width: 40px;" src="dashboard/item-image/<?php echo $itmr['image']; ?>">
 														</td>
 														<td><?php echo $itmr['item_name']; ?></td>
-														<td><?php echo $itmr['price']; ?></td>
+														<td><?php echo $itmr['price']; ?> $</td>
 														<td><?php echo $qty; ?></td>
-														<td><?php echo $qty * $itmr['price']; ?></td>
+														<td><?php echo $qty * $itmr['price'] ; ?> $</td>
 													</tr>
 											<?php $c++;
 												}
@@ -150,7 +150,7 @@ if (isset($_POST['confirm'])) {
 							</div>
 							<div class="col mb-3 d-flex py-4 border" style="background: white;">
 								<div class="align-self-center">
-									<p class="mb-0"><span>Total Price:</span> <a href=""><?php echo $total_price; ?> ₹</a></p>
+									<p class="mb-0"><span>Total Price:</span> <a href=""><?php echo $total_price; ?> $</a></p>
 								</div>
 							</div>
 						</div>
@@ -198,9 +198,13 @@ if (isset($_POST['confirm'])) {
 								$chr_id = $_POST['chair'][$s]; ?>
 								<input type="hidden" name="chair[]" value="<?php echo $chr_id; ?>">
 							<?php } ?>
-							<?php for ($t = 0; $t < count($_POST["item"]); $t++) {
-								$i_id = $_POST['item'][$t];
+							<?php 
+							$j = -1;
+							for ($t = 0; $t < count($_POST["qty"]); $t++) {
 								$qty = $_POST['qty'][$t];
+								if($qty == null) continue;
+								$j++;
+								$i_id = $_POST['item'][$j];
 							?>
 								<input type="hidden" name="item[]" value="<?php echo $i_id; ?>">
 								<input type="hidden" name="qty[]" value="<?php echo $qty; ?>">

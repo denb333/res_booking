@@ -97,7 +97,7 @@ $con = connect();
 				    $file_size = $_FILES['image']['size'];
 				    // get the file in temporary
 				    $file_tmp = $_FILES['image']['tmp_name'];
-				    // get the file extension, pathinfo($variable_name,FLAG)
+				    // 	)
 				    $extension = pathinfo($file_name,PATHINFO_EXTENSION);
 
 				    if ($extension =="jpg" || $extension =="png" || $extension =="jpeg"){
@@ -172,7 +172,8 @@ $con = connect();
 		$total_price = $_POST['total_price'];
 		$transactionid = $_POST['transaction_id'];
 
-		date_default_timezone_set("Asia/Dhaka");
+		// date_default_timezone_set("Asia/Ha_Noi");
+		date_default_timezone_set('Asia/Ho_Chi_Minh');
          $make_time =date("h:i:sa");
          $make_date =date("Y-m-d");
 		$booking_id= uniqid();
@@ -206,10 +207,12 @@ $con = connect();
         }
 
         $iinsert = false;
+		    // print_r($_POST['qty']);
         if ($cinsert == true) {
         	for($i = 0; $i < count($_POST["item"]); $i++){
+				$qty = $_POST['qty'][$i];
+				
                 $i_id = $_POST['item'][$i];
-                $qty = $_POST['qty'][$i];
                 $itmQuery = "INSERT INTO `booking_menus`(`booking_id`, `item_id`, `qty`) 
                 		VALUES ('$booking_id','$i_id','$qty');";
                 if ($con->query($itmQuery) === TRUE) {

@@ -62,12 +62,12 @@ if (!isset($_SESSION['isLoggedIn'])) {
 												<br/>
 												<?php echo $r['address']; ?>
 												<br/>
-												Phone: +88 <?php echo $r['phone']; ?>
+												Phone: +84 <?php echo $r['phone']; ?>
 												<br/>
 												<?php echo $r['email']; ?>
 											</address>
 											<div class="ib">
-												<img style="width: 174px;height: 69px;" src="user-image/<?php echo $r['logo']; ?>" alt="OKLER Themes" />
+												<img style="width: 174px;height: 99px;" src="user-image/<?php echo $r['logo']; ?>" alt="OKLER Themes" />
 											</div>
 										</div>
 										<?php } ?>
@@ -91,7 +91,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
 												<address>
 													<?php echo $booking_name; ?>
 													<br/>
-													Phone: +91 <?php echo $booking_phone; ?>
+													Phone: +94 <?php echo $booking_phone; ?>
 												
 												</address>
 											</div>
@@ -160,10 +160,10 @@ if (!isset($_SESSION['isLoggedIn'])) {
 											<tr>
 												<td><?php echo $count; ?></td>
 												<td class="text-semibold text-dark"><?php echo $r4['item_name']; ?></td>
-												<td><?php echo $r4['price']; ?> ₹</td>
+												<td><?php echo $r4['price']; ?> $</td>
 												<td class="text-center"><?php echo $r4['qty']; ?></td>
 												<td class="text-center">
-												<?php echo $subtotal= $r4['price'] * $r4['qty']; ?> ₹
+												<?php echo $subtotal= $r4['price'] * $r4['qty']; ?> $
 												</td>
 											</tr>
 											<?php $count++; } ?>
@@ -178,7 +178,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
 												<tbody>
 													<tr class="h4">
 														<td colspan="2">Grand Total</td>
-														<td class="text-left"><?php echo $grand_total; ?> ₹</td>
+														<td class="text-left"><?php echo $grand_total; ?> $</td>
 													</tr>
 												</tbody>
 											</table>

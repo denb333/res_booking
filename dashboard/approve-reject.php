@@ -33,7 +33,7 @@
 			$email = $r['email'];
 			echo $email;
 		}
-		echo $con->query($sql);
+		// echo $con->query($sql);
 		if ($con->query($sql) === TRUE) {
 			include 'mailSender.php'; 
 			$mail->Body = '<html><body>

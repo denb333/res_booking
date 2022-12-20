@@ -123,7 +123,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
 	         return confirm("Are you sure?");
 	       }
    		</script>
-
 		<?php include 'template/script-res.php'; ?>
+
 	</body>
 </html>
