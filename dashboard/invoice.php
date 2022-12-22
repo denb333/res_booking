@@ -75,7 +75,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
 								</header>
 								<?php 
 									$booking_number = $_GET['booking-number'];
-									$sql2 = "SELECT * FROM `booking_details` where booking_id = '$booking_number';";
+									$sql2 = "SELECT * FROM `booking_details` where id = '$booking_number';";
 									$result2 = $con->query($sql2);
 									foreach ($result2 as $r2) {
 										$booking_date = $r2['booking_date'];

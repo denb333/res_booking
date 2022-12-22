@@ -178,7 +178,7 @@ $con = connect();
          $make_date =date("Y-m-d");
 		$booking_id= uniqid();
 
-		$iquery="INSERT INTO `booking_details`(`booking_id`,`res_id`,`c_id`,`make_date`, `make_time`, `name`, `phone`, `booking_date`, `booking_time`, `bill`,`transactionid`) 
+		$iquery="INSERT INTO `booking_details`(`id`,`res_id`,`c_id`,`make_date`, `make_time`, `name`, `phone`, `booking_date`, `booking_time`, `bill`,`transactionid`) 
 		    VALUES ('$booking_id','$res_id','$u_id','$make_date','$make_time','$reservation_name','$reservation_phone','$reservation_date','$reservation_time','$total_price','$transactionid');";
 		if ($con->query($iquery) === TRUE) {
 			$bdinsert = true;

@@ -96,13 +96,13 @@ if (!isset($_SESSION['isLoggedIn'])) {
 												<?php 
 													if ($status == 1) {
 												?>
-												<a href="approve-reject.php?breject_id=<?php echo $r['id']; ?>&booking-number=<?php echo $r['booking_id']; ?>" class="btn btn-danger"  onclick="if (!Done()) return false; ">Reject</a>
+												<a href="approve-reject.php?breject_id=<?php echo $r['id']; ?>" class="btn btn-danger"  onclick="if (!Done()) return false; ">Reject</a>
 												<?php }else{ ?>
-												<a href="approve-reject.php?bapprove_id=<?php echo $r['id']; ?>&booking-number=<?php echo $r['booking_id']; ?>" class="btn btn-success"  onclick="if (!Done()) return false; ">Confirm</a>	
+												<a href="approve-reject.php?bapprove_id=<?php echo $r['id']; ?>" class="btn btn-success"  onclick="if (!Done()) return false; ">Confirm</a>	
 												<?php } ?>
 											</td>
 											<td class="center hidden-phone">
-												<a href="invoice.php?booking-number=<?php echo $r['booking_id']; ?>" class="btn btn-primary">View</a>
+												<a href="invoice.php?booking-number=<?php echo $r['id']; ?>" class="btn btn-primary">View</a>
 											</td>
 										</tr>
 										<?php $count++; } ?>

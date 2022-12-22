@@ -68,9 +68,9 @@ include 'template/header.php'; ?>
                               foreach ($result2 as $r2) {
                                 $c_id = $r2['id'];
                                 $booked = false;
-                                $cbbook = "SELECT bc.id,bc.booking_id,bc.chair_id,bc.chair_no,bd.booking_id,bd.res_id,bd.booking_date,bd.booking_time
+                                $cbbook = "SELECT bc.booking_id,bc.chair_id,bc.chair_no,bd.id,bd.res_id,bd.booking_date,bd.booking_time
                                   FROM booking_chair as bc, booking_details as bd
-                                  WHERE bc.booking_id = bd.booking_id
+                                  WHERE bc.booking_id = bd.id
                                   AND bd.res_id = '$res_id'
                                   AND bd.booking_date = '$reservation_date'
                                   AND bd.booking_time ='$reservation_time'
